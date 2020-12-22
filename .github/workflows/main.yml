@@ -2,7 +2,7 @@ name: Build and push
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 env:
   REGISTRY_URL: ${{ secrets.REGISTRY_URL }}
@@ -24,7 +24,6 @@ jobs:
       - name: "Login to Registry"
         uses: docker/login-action@v1.6.0
         with:
-          registry: ${{ env.REGISTRY_URL }}
           username: ${{ env.REGISTRY_USERNAME }}
           password: ${{ env.REGISTRY_TOKEN }}
 
